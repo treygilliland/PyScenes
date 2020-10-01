@@ -2,7 +2,7 @@
 
 ![GitHub](https://img.shields.io/github/license/treygilliland/PyScenes?style=plastic)
 
-PyScenes is wrapper over the [PyGame](https://www.pygame.org/wiki/about) library used to write games and multimedia programs in Python. PyScenes aims to provide a base project for building your very own game and modules containing beginner-freindly high level functionality for 2D drawing, sprites, IO, networking, and more. 
+PyScenes is [PyGame 2](https://www.pygame.org/wiki/about) library designed to provide the high-level functionality used in games and multi-media programs so that users can focus on creating rather than debugging. PyScenes aims to provide classes and functions related to sprites, backgrounds, sounds, images, text, and more!
 
 ## Installation
 
