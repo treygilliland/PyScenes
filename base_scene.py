@@ -64,7 +64,7 @@ class TitleScene(BaseScene):
         BaseScene.__init__(self)
 
     def setup(self):
-        print("setup"
+        print("setup")
 
     def process_input(self, events, pressed_keys):
         print("process")
