@@ -1,0 +1,12 @@
+attrs==20.2.0
+iniconfig==1.0.1
+packaging==20.4
+pluggy==0.13.1
+py==1.9.0
+pygame==2.0.0.dev12
+pyparsing==2.4.7
+pyscroll==2.19.2
+pytest==6.1.1
+PyTMX==3.22.0
+six==1.15.0
+toml==0.10.1
