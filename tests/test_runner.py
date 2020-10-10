@@ -6,6 +6,8 @@ import pytest
 import time
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
+os.environ["SDL_AUDIODRIVER"] = "dummy"
+
 
 # Game constants should be defined in scenes
 SCREEN_WIDTH = 800
