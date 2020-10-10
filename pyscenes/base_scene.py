@@ -5,17 +5,16 @@
 #   so the user can focus on making scenes using the methods available in
 #   PyScenes
 
-import pyscenes
-
-# General Game Variables
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
-FPS = 30
+from abc import ABC, abstractmethod
 
 # Abstract Base Scene class for all scene objects
 # Essentially an implementation of the Model-View-Controller pattern
 # setup, processInput, update, render, cleanup must be overridden
-class BaseScene:
+
+
+class BaseScene(ABC):
+    # if init is overrided by the base class, super must be called
+    @abstractmethod
     def __init__(self):
         self.next = self
 
@@ -24,27 +23,32 @@ class BaseScene:
 
     # called once when a Scene is initiated
     # responsible for setting up the scene and loading data
+    @abstractmethod
     def setup(self):
-        print("uh-oh, you didn't override this in the child class")
+        pass
 
     # first part of the core loop
     # responsible for parsing input events CONTROLLER
+    @abstractmethod
     def process_input(self, events, pressed_keys):
-        print("uh-oh, you didn't override this in the child class")
+        pass
 
     # second part of the core loop
     # responsible for handling the core game logic MODEL
+    @abstractmethod
     def update(self):
-        print("uh-oh, you didn't override this in the child class")
+        pass
 
     # third and final part of the core loop
     # responsible for updating the VIEW
-    def render(self, screen):
-        print("uh-oh, you didn't override this in the child class")
+    @abstractmethod
+    def render(self, display):
+        pass
 
     # called once when the scene is no longer used
+    @abstractmethod
     def cleanup(self):
-        print("uh-oh, you didn't override this in the child class")
+        pass
 
     # setter method for scene switching
     # do NOT override
@@ -56,31 +60,20 @@ class BaseScene:
     def terminate(self):
         self.switch_scene(None)
 
-# Example implementation of the base scene class
-class TitleScene(BaseScene):
-    def __init__(self):
-        print("Initializing TitleScene...")
-        self.setup()
-        BaseScene.__init__(self)
 
-    def setup(self):
-        print("setup")
+# example implementation of the base scene
+# class TitleScene(BaseScene):
+#     def setup(self):
+#         print("setup")
 
-    def process_input(self, events, pressed_keys):
-        print("process")
+#     def process_input(self, events, pressed_keys):
+#         print("process")
 
-    def update(self):
-        print("update")
+#     def update(self):
+#         print("update")
 
-    def render(self, screen):
-        print("render")
+#     def render(self, screen):
+#         print("render")
 
-    def cleanup(self):
-        print("cleanup")
-
-def main():
-    instance = pyscenes.Runner(SCREEN_WIDTH, SCREEN_HEIGHT, FPS)
-    instance.run_game(TitleScene())  # pass the initial Scene object here to start the game
-
-if __name__ == "__main__":
-    main()
+#     def cleanup(self):
+#         print("cleanup")
