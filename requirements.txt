@@ -5,6 +5,7 @@ pluggy==0.13.1
 py==1.9.0
 pygame==2.0.0.dev12
 pyparsing==2.4.7
+-e git+https://github.com/treygilliland/PyScenes.git@0e8fdad76f9848e65c9749590a596224a9528c75#egg=pyscenes
 pyscroll==2.19.2
 pytest==6.1.1
 PyTMX==3.22.0
