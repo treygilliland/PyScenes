@@ -17,9 +17,13 @@ FPS = 30
 
 
 class TitleScene(BaseScene):
-    def __init__(self, display):
+    def __init__(self, display, test=False):
         print("Initializing TitleScene...")
         self.display = display
+        if test:
+            self.test = test
+            self.render_count = 0
+
         self.setup()
         BaseScene.__init__(self)
 
@@ -35,6 +39,11 @@ class TitleScene(BaseScene):
 
     def render(self, display):
         print("render")
+
+        if self.test:
+            self.render_count += 1
+            if self.render_count > 60:
+                super().terminate()
 
     def cleanup(self):
         print("cleanup")

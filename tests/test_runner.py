@@ -4,6 +4,9 @@ from pyscenes.examples import title_screen
 import os
 import pytest
 import time
+import keyboard
+
+os.environ["SDL_VIDEODRIVER"] = "dummy"
 
 # Game constants should be defined in scenes
 SCREEN_WIDTH = 800
@@ -104,7 +107,8 @@ def test_title_scene(game_instance):
     '''
     wd = os.getcwd()
     os.chdir("pyscenes/examples/")
-    game_instance.run_game(title_screen.TitleScene(game_instance.display))
+    game_instance.run_game(
+        title_screen.TitleScene(game_instance.display, True))
     os.chdir(wd)
 
 
