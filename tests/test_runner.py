@@ -4,7 +4,6 @@ from pyscenes.examples import title_screen
 import os
 import pytest
 import time
-import keyboard
 
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 
