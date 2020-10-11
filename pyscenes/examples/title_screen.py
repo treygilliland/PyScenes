@@ -18,7 +18,6 @@ class TitleScene(BaseScene):
             self.test = test
             self.render_count = 0
 
-        self.setup()
         BaseScene.__init__(self)
 
     def setup(self):
@@ -43,11 +42,13 @@ class TitleScene(BaseScene):
         print("cleanup")
 
 
-def main():
-    instance = pyscenes.Game(SCREEN_WIDTH, SCREEN_HEIGHT, FPS)
-    # pass a Scene object here to start the game
-    instance.run_game(TitleScene(instance.display, True))
-
 # TODO: only Run this if file executed as script
-if __name__ == "__main__":
-    main()
+
+# def main():
+#     instance = pyscenes.Game(SCREEN_WIDTH, SCREEN_HEIGHT, FPS)
+#     # pass a Scene object here to start the game
+#     instance.run_game(TitleScene(instance, True))
+
+# 
+# if __name__ == "__main__":
+#     main()
