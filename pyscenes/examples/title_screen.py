@@ -48,6 +48,6 @@ def main():
     # pass a Scene object here to start the game
     instance.run_game(TitleScene(instance.display, True))
 
-TODO: only Run this if file executed as script
+# TODO: only Run this if file executed as script
 if __name__ == "__main__":
     main()
