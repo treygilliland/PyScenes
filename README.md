@@ -1,27 +1,30 @@
 # PyScenes
 
-![GitHub](https://img.shields.io/github/license/treygilliland/PyScenes?style=plastic)
+![GitHub](https://img.shields.io/github/license/treygilliland/PyScenes)
+![Travis (.org)](https://img.shields.io/travis/treygilliland/pyscenes)
+![Lines of code](https://img.shields.io/tokei/lines/github/treygilliland/pyscenes)
 
 PyScenes is [PyGame 2](https://www.pygame.org/wiki/about) library designed to provide the high-level functionality used in games and multi-media programs so that users can focus on creating rather than debugging. PyScenes aims to provide classes and functions related to sprites, backgrounds, sounds, images, text, and more!
 
-## Installation and Usage
+## Installation
 
-There are 2 main ways to use PyScenes:
+PyScenes is coming to PyPi and other providers soon.
 
-1. PyScenes with Runner Class
 
-> This is the intended way to use PyScenes for beginners and for starting a new project.
-> To create your own game, all you need to do is create subclasses of the BaseScene class 
-> that contain your code for each "scene" of your game.
+## Usage
 
-2. PyScenes standalone
+PyScenes is designed to be used as an all-in-one project template and interface over the PyGame engine. 
 
-> PyScene methods can be used on existing projects with some integration work. 
-> PyScene contains static functions that operate at higher levels than PyGame itself offers
-> so feel free to import these functions for use in your own project.
+The PyScenes package contains two key components:
+1. PyScenes module containing everything needed to create a game
+2. BaseScene class used to define a template for creating scenes for your game
+
+To make a game with pyscenes, create a copy of the game_template.py file and start creating your scenes there!
 
 To see an example of using PyScenes, navigate to the examples directory 
 and run any of the self-contained examples there. More coming soon!
+
+Documentation coming soon.
 
 ## Contributing
 
@@ -39,5 +42,5 @@ PyScenes is heavily inspired by and contains code from
 This library was very useful when I first started learning to make games with Python and 
 its simplicity and ease of use is a great motivation for the project.
 
-The code for the scene-based OOP implementation comes from the Nerd Paradise blog pygame tutorial.
+The design for the scene-based OOP implementation comes from the Nerd Paradise blog pygame tutorial.
 See more [here](https://nerdparadise.com/programming/pygame/part7).
