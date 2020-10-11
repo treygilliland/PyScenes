@@ -1,6 +1,6 @@
 import pyscenes.pyscenes as pyscenes
 from pyscenes.base_scene import BaseScene
-from pyscenes.examples import title_screen
+from pyscenes.examples.title_screen import TitleScene
 import os
 import pytest
 import time
@@ -108,8 +108,7 @@ def test_title_scene(game_instance):
     '''
     wd = os.getcwd()
     os.chdir("pyscenes/examples/")
-    game_instance.run_game(
-        title_screen.TitleScene(game_instance.display, True))
+    game_instance.run_game(TitleScene(game_instance.display, True))
     os.chdir(wd)
 
 
