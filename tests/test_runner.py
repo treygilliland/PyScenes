@@ -108,7 +108,7 @@ def test_title_scene(game_instance):
     '''
     wd = os.getcwd()
     os.chdir("pyscenes/examples/")
-    game_instance.run_game(title_scene.TitleScene(game_instance.display, True))
+    game_instance.run_game(pyscenes.examples.title_screen.TitleScene(game_instance.display, True))
     os.chdir(wd)
 
 
