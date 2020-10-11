@@ -17,7 +17,7 @@ FPS = 30
 
 
 class TitleScene(BaseScene):
-    def __init__(self, display, test=False):
+    def __init__(self, display, test):
         print("Initializing TitleScene...")
         self.display = display
         if test:
