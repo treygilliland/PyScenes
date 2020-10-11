@@ -52,8 +52,8 @@ class TitleScene(BaseScene):
 def main():
     instance = pyscenes.Game(SCREEN_WIDTH, SCREEN_HEIGHT, FPS)
     # pass a Scene object here to start the game
-    instance.run_game(TitleScene(instance.display))
+    instance.run_game(TitleScene(instance.display, True))
 
-
-if __name__ == "__main__":
-    main()
+# TODO: only Run this if file executed as script
+# if __name__ == "__main__":
+#     main()
