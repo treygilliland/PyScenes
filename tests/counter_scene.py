@@ -1,12 +1,13 @@
-#Self-contained test scene ensuring Game.run_game() works properly
+# Self-contained test scene ensuring Game.run_game() works properly
 import pyscenes.pyscenes as pyscenes
 from pyscenes.base_scene import BaseScene
 
+
 class CounterScene(BaseScene):
-    '''
+    """
     CounterScene is a minimum implementation of a Scene Object
     This scene is setup to make sure each method inside the scene is run the appropriate amount of time according to the FPS.
-    '''
+    """
 
     def __init__(self, game, test_duration):
         self.game = game

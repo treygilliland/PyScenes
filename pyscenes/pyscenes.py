@@ -67,6 +67,7 @@ class Display:
         spriteGroup.clear(self.screen, self.background.surface)
         textboxGroup.clear(self.screen, self.background.surface)
 
+
 # contains methods related to managing game
 # should be self contained, no need to access anything anything in here
 # inputs are only processed for quit events here
@@ -116,8 +117,11 @@ class Game:
 
             # if game is not terminating, setup next scene
             if self.current_scene.next is not None:
-                print("Switching from {} to {}...".format(
-                    self.current_scene, self.current_scene.next))
+                print(
+                    "Switching from {} to {}...".format(
+                        self.current_scene, self.current_scene.next
+                    )
+                )
                 self.current_scene.next.setup()
 
         return self.current_scene.next
@@ -131,8 +135,7 @@ class Game:
             if event.type == pygame.QUIT:
                 quit_attempt = True
             elif event.type == pygame.KEYDOWN:
-                alt_pressed = pressed_keys[pygame.K_LALT] or \
-                    pressed_keys[pygame.K_RALT]
+                alt_pressed = pressed_keys[pygame.K_LALT] or pressed_keys[pygame.K_RALT]
                 if event.key == pygame.K_ESCAPE:
                     quit_attempt = True
                 elif event.key == pygame.K_F4 and alt_pressed:
@@ -146,57 +149,64 @@ class Game:
         return filtered_events
 
 
-keydict = {"space": pygame.K_SPACE, "esc": pygame.K_ESCAPE, "up": pygame.K_UP, "down": pygame.K_DOWN,
-           "left": pygame.K_LEFT, "right": pygame.K_RIGHT, "return": pygame.K_RETURN,
-           "a": pygame.K_a,
-           "b": pygame.K_b,
-           "c": pygame.K_c,
-           "d": pygame.K_d,
-           "e": pygame.K_e,
-           "f": pygame.K_f,
-           "g": pygame.K_g,
-           "h": pygame.K_h,
-           "i": pygame.K_i,
-           "j": pygame.K_j,
-           "k": pygame.K_k,
-           "l": pygame.K_l,
-           "m": pygame.K_m,
-           "n": pygame.K_n,
-           "o": pygame.K_o,
-           "p": pygame.K_p,
-           "q": pygame.K_q,
-           "r": pygame.K_r,
-           "s": pygame.K_s,
-           "t": pygame.K_t,
-           "u": pygame.K_u,
-           "v": pygame.K_v,
-           "w": pygame.K_w,
-           "x": pygame.K_x,
-           "y": pygame.K_y,
-           "z": pygame.K_z,
-           "1": pygame.K_1,
-           "2": pygame.K_2,
-           "3": pygame.K_3,
-           "4": pygame.K_4,
-           "5": pygame.K_5,
-           "6": pygame.K_6,
-           "7": pygame.K_7,
-           "8": pygame.K_8,
-           "9": pygame.K_9,
-           "0": pygame.K_0,
-           "num0": pygame.K_KP0,
-           "num1": pygame.K_KP1,
-           "num2": pygame.K_KP2,
-           "num3": pygame.K_KP3,
-           "num4": pygame.K_KP4,
-           "num5": pygame.K_KP5,
-           "num6": pygame.K_KP6,
-           "num7": pygame.K_KP7,
-           "num8": pygame.K_KP8,
-           "num9": pygame.K_KP9}
+keydict = {
+    "space": pygame.K_SPACE,
+    "esc": pygame.K_ESCAPE,
+    "up": pygame.K_UP,
+    "down": pygame.K_DOWN,
+    "left": pygame.K_LEFT,
+    "right": pygame.K_RIGHT,
+    "return": pygame.K_RETURN,
+    "a": pygame.K_a,
+    "b": pygame.K_b,
+    "c": pygame.K_c,
+    "d": pygame.K_d,
+    "e": pygame.K_e,
+    "f": pygame.K_f,
+    "g": pygame.K_g,
+    "h": pygame.K_h,
+    "i": pygame.K_i,
+    "j": pygame.K_j,
+    "k": pygame.K_k,
+    "l": pygame.K_l,
+    "m": pygame.K_m,
+    "n": pygame.K_n,
+    "o": pygame.K_o,
+    "p": pygame.K_p,
+    "q": pygame.K_q,
+    "r": pygame.K_r,
+    "s": pygame.K_s,
+    "t": pygame.K_t,
+    "u": pygame.K_u,
+    "v": pygame.K_v,
+    "w": pygame.K_w,
+    "x": pygame.K_x,
+    "y": pygame.K_y,
+    "z": pygame.K_z,
+    "1": pygame.K_1,
+    "2": pygame.K_2,
+    "3": pygame.K_3,
+    "4": pygame.K_4,
+    "5": pygame.K_5,
+    "6": pygame.K_6,
+    "7": pygame.K_7,
+    "8": pygame.K_8,
+    "9": pygame.K_9,
+    "0": pygame.K_0,
+    "num0": pygame.K_KP0,
+    "num1": pygame.K_KP1,
+    "num2": pygame.K_KP2,
+    "num3": pygame.K_KP3,
+    "num4": pygame.K_KP4,
+    "num5": pygame.K_KP5,
+    "num6": pygame.K_KP6,
+    "num7": pygame.K_KP7,
+    "num8": pygame.K_KP8,
+    "num9": pygame.K_KP9,
+}
 
 
-class Background():
+class Background:
     def __init__(self, screen):
         self.colour = pygame.Color("black")
         self.screen = screen
@@ -221,22 +231,23 @@ class Background():
     def scroll(self, x, y):
         self.stagePosX -= x
         self.stagePosY -= y
-        col = (self.stagePosX %
-               (self.tileWidth * len(self.tiles[0]))) // self.tileWidth
-        xOff = (0 - self.stagePosX % self.tileWidth)
-        row = (self.stagePosY %
-               (self.tileHeight * len(self.tiles))) // self.tileHeight
-        yOff = (0 - self.stagePosY % self.tileHeight)
+        col = (self.stagePosX % (self.tileWidth * len(self.tiles[0]))) // self.tileWidth
+        xOff = 0 - self.stagePosX % self.tileWidth
+        row = (self.stagePosY % (self.tileHeight * len(self.tiles))) // self.tileHeight
+        yOff = 0 - self.stagePosY % self.tileHeight
 
-        col2 = ((self.stagePosX + self.tileWidth) %
-                (self.tileWidth * len(self.tiles[0]))) // self.tileWidth
-        row2 = ((self.stagePosY + self.tileHeight) %
-                (self.tileHeight * len(self.tiles))) // self.tileHeight
+        col2 = (
+            (self.stagePosX + self.tileWidth) % (self.tileWidth * len(self.tiles[0]))
+        ) // self.tileWidth
+        row2 = (
+            (self.stagePosY + self.tileHeight) % (self.tileHeight * len(self.tiles))
+        ) // self.tileHeight
         screen.blit(self.tiles[row][col], [xOff, yOff])
         screen.blit(self.tiles[row][col2], [xOff + self.tileWidth, yOff])
         screen.blit(self.tiles[row2][col], [xOff, yOff + self.tileHeight])
-        screen.blit(self.tiles[row2][col2], [
-                    xOff + self.tileWidth, yOff + self.tileHeight])
+        screen.blit(
+            self.tiles[row2][col2], [xOff + self.tileWidth, yOff + self.tileHeight]
+        )
 
         self.surface = screen.copy()
 
@@ -254,8 +265,9 @@ def loadImage(fileName, useColorKey=False):
         # Return the image
         return image
     else:
-        raise Exception("Error loading image: " + fileName +
-                        " - Check filename and path?")
+        raise Exception(
+            "Error loading image: " + fileName + " - Check filename and path?"
+        )
 
 
 if __name__ == "__main__":

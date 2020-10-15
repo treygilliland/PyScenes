@@ -1,4 +1,4 @@
-#Self-contained example of using PyScenes for a simple title screen
+# Self-contained example of using PyScenes for a simple title screen
 import pyscenes.pyscenes as pyscenes
 from pyscenes.base_scene import BaseScene
 
@@ -7,10 +7,12 @@ SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 FPS = 30
 
+
 class TitleScene(BaseScene):
-    '''
+    """
     TitleScene example class.
-    '''
+    """
+
     def __init__(self, game, test=False):
         print("Initializing TitleScene...")
         self.game = game
@@ -49,6 +51,6 @@ class TitleScene(BaseScene):
 #     # pass a Scene object here to start the game
 #     instance.run_game(TitleScene(instance, True))
 
-# 
+#
 # if __name__ == "__main__":
 #     main()
