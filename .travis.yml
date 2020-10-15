@@ -10,6 +10,6 @@ install:
   - pip install codecov pytest-cov
 # command to run tests
 script:
-  - pytest tests/test_runner.py
+  - pytest tests/test_runner.py --cov-config=.coveragerc --cov=pyscenes
 after_success:
   - codecov
