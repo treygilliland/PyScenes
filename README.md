@@ -3,6 +3,7 @@
 ![GitHub](https://img.shields.io/github/license/treygilliland/PyScenes)
 ![Travis (.org)](https://img.shields.io/travis/treygilliland/pyscenes)
 ![Lines of code](https://img.shields.io/tokei/lines/github/treygilliland/pyscenes)
+![Codecov](https://img.shields.io/codecov/c/gh/treygilliland/pyscenes?color=pink)
 
 PyScenes is [PyGame 2](https://www.pygame.org/wiki/about) library designed to provide the high-level functionality used in games and multi-media programs so that users can focus on creating rather than debugging. PyScenes aims to provide classes and functions related to sprites, backgrounds, sounds, images, text, and more!
 
