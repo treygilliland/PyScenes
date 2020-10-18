@@ -2,6 +2,7 @@
 
 ![GitHub](https://img.shields.io/github/license/treygilliland/PyScenes)
 ![Travis (.org)](https://img.shields.io/travis/treygilliland/pyscenes)
+[![Documentation Status](https://readthedocs.org/projects/pyscenes/badge/?version=latest)](https://pyscenes.readthedocs.io/en/latest/?badge=latest)
 ![Lines of code](https://img.shields.io/tokei/lines/github/treygilliland/pyscenes)
 ![Codecov](https://img.shields.io/codecov/c/gh/treygilliland/pyscenes?color=pink)
 
