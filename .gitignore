@@ -1,6 +1,11 @@
 # Extra files
 future_features.py
 
+#Sphinx docs related
+docs/_build
+docs/_static
+docs/_templates
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
