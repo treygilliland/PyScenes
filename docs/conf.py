@@ -11,9 +11,10 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
 import sphinx_rtd_theme
-import os
-import sys
-sys.path.insert(0, os.path.abspath('../'))
+from recommonmark.transform import AutoStructify
+# import os
+# import sys
+# sys.path.insert(0, os.path.abspath('../'))
 
 # -- Project information -----------------------------------------------------
 
@@ -23,6 +24,7 @@ author = 'Trey Gilliland'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
+master_doc="index"
 
 
 # -- General configuration ---------------------------------------------------
@@ -31,7 +33,6 @@ release = '0.0.1'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-master_doc = "index"
 
 extensions = ["recommonmark"]
 source_suffix = ['.md', '.rst']
@@ -59,3 +60,9 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+def setup(app):
+    app.add_config_value('recommonmark_config', {
+        'auto_toc_tree_section': 'Contents',
+    }, True)
+    app.add_transform(AutoStructify)
