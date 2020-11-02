@@ -26,7 +26,11 @@ To make a game with pyscenes, create a copy of the game_template.py file and sta
 To see an example of using PyScenes, navigate to the examples directory 
 and run any of the self-contained examples there. More coming soon!
 
-Documentation coming soon.
+## Documentation
+
+Documentation is hosted through ReadTheDocs [here](https://pyscenes.readthedocs.io/en/latest/).
+
+Created using Sphinx.
 
 ## Contributing
 

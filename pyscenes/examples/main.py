@@ -1,5 +1,5 @@
 import pyscenes
-from base_scene import BaseScene
+from pyscenes.base_scene import BaseScene
 
 # Game constants should be defined in class with scenes
 SCREEN_WIDTH = 800

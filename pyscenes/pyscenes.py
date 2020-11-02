@@ -1,10 +1,8 @@
-# this is the main "engine" of the project
-# the user shouldn't need to modify ANYTHING within this file to create a game
-# this contains classes related to the game itself, objects are interfaced through Scene objects
-#   made by the user in scenes.py
+"""
+Main "engine" of the project
 
-# this code is a modification of pygame_functions by Steve Paget
-# https://github.com/StevePaget/Pygame_Functions
+Contains classes related to the game itself, objects are interfaced through Scene objects.
+"""
 
 import pygame
 import sys
@@ -17,6 +15,9 @@ screenRefresh = True
 
 
 class Mixer:
+    """
+    Mixer controls the sounds of games.
+    """
     def __init__(self):
         self.paused = False
         self.initialize()
