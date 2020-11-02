@@ -1,6 +1,14 @@
-# Welcome to PyScenes's documentation!
+# Welcome to PyScenes's ReadTheDocs!
 
-## Header 1
+PyScenes is PyGame 2 library designed to provide the high-level functionality used in games and multi-media programs so 
+that users can focus on creating rather than debugging
 
-- Bullet 1
-- Bullet 2
+See below for documentation, installation, usage, and more:
+
+```eval_rst
+.. toctree::
+   :maxdepth: 2
+
+   README.md
+   autoapi/index
+```
