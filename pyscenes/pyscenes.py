@@ -68,13 +68,10 @@ class Display:
         spriteGroup.clear(self.screen, self.background.surface)
         textboxGroup.clear(self.screen, self.background.surface)
 
-
 # contains methods related to managing game
 # should be self contained, no need to access anything anything in here
 # inputs are only processed for quit events here
 #   all other input processing should be done through the scene itself
-
-
 class Game:
     def __init__(self, width, height, fps):
         self.fps = fps
@@ -85,12 +82,6 @@ class Game:
 
     def initialize(self):
         pygame.init()
-
-    # see tick method
-
-    def tick(self):
-        self.clock.tick(self.fps)
-        return self.clock.get_fps()
 
     # "main" method for running game, controlling system level
     def run_game(self, starting_scene):
@@ -110,6 +101,10 @@ class Game:
             self.tick()
 
         print("Game made with PyScenes.")
+
+    def tick(self):
+        self.clock.tick(self.fps)
+        return self.clock.get_fps()
 
     def next_scene(self):
         # if scene called switch, clean it up, then set it to old scene state
@@ -211,6 +206,7 @@ class Background:
     def __init__(self, screen):
         self.colour = pygame.Color("black")
         self.screen = screen
+        self.surface = screen.copy()
 
     def setTiles(self, tiles):
         if type(tiles) is str:
@@ -226,7 +222,7 @@ class Background:
         self.screen.blit(self.tiles[0][0], [0, 0])
         self.surface = self.screen.copy()
 
-    def setBackgroundImage(self, img):
+    def setImage(self, img):
         self.setTiles(img)
 
     def scroll(self, x, y):
@@ -250,13 +246,13 @@ class Background:
             self.tiles[row2][col2], [xOff + self.tileWidth, yOff + self.tileHeight]
         )
 
-        self.surface = screen.copy()
+        self.surface = self.screen.copy()
 
-    def setColour(self, colour):
-        self.colour = parseColour(colour)
-        screen.fill(self.colour)
+    def setColor(self, color):
+        self.colour = parseColor(color)
+        self.screen.fill(self.color)
         pygame.display.update()
-        self.surface = screen.copy()
+        self.surface = self.screen.copy()
 
 
 def loadImage(fileName, useColorKey=False):
@@ -269,6 +265,37 @@ def loadImage(fileName, useColorKey=False):
         raise Exception(
             "Error loading image: " + fileName + " - Check filename and path?"
         )
+
+
+def parseColor(color):
+    if type(color) == str:
+        # check to see if valid colour
+        return pygame.Color(color)
+    else:
+        colourRGB = pygame.Color("white")
+        colourRGB.r = color[0]
+        colourRGB.g = color[1]
+        colourRGB.b = color[2]
+        return colourRGB
+
+
+def mouseX():
+    x = pygame.mouse.get_pos()
+    return x[0]
+
+
+def mouseY():
+    y = pygame.mouse.get_pos()
+    return y[1]
+
+
+def mousePressed():
+    # pygame.event.clear()
+    mouseState = pygame.mouse.get_pressed()
+    if mouseState[0]:
+        return True
+    else:
+        return False
 
 
 if __name__ == "__main__":

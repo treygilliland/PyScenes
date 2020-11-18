@@ -8,7 +8,6 @@ import time
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 os.environ["SDL_AUDIODRIVER"] = "dummy"
 
-
 # Define Game constants here for same size
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600

@@ -16,41 +16,37 @@ class TitleScene(BaseScene):
     def __init__(self, game, test=False):
         print("Initializing TitleScene...")
         self.game = game
-        if test:
-            self.test = test
+        self.test = test
+        if self.test:
             self.render_count = 0
 
         BaseScene.__init__(self)
 
     def setup(self):
         print("Setting up TitleScene...")
-        self.game.display.background.setBackgroundImage("assets/title_screen.jpg")
+        self.game.display.background.setImage("assets/title_screen.jpg")
 
     def process_input(self, events, pressed_keys):
-        print("process")
+        pass
 
     def update(self):
-        print("update")
+        pass
 
     def render(self, display):
-        print("render")
-
         if self.test:
             self.render_count += 1
             if self.render_count > 60:
                 super().terminate()
 
     def cleanup(self):
-        print("cleanup")
+        print("Cleaning up TitleScene...")
 
 
-# TODO: only Run this if file executed as script
+def main():
+    instance = pyscenes.Game(SCREEN_WIDTH, SCREEN_HEIGHT, FPS)
+    # pass a Scene object here to start the game
+    instance.run_game(TitleScene(instance))
 
-# def main():
-#     instance = pyscenes.Game(SCREEN_WIDTH, SCREEN_HEIGHT, FPS)
-#     # pass a Scene object here to start the game
-#     instance.run_game(TitleScene(instance, True))
 
-#
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()

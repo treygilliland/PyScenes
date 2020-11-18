@@ -1,5 +1,4 @@
 # Self-contained test scene ensuring Game.run_game() works properly
-import pyscenes.pyscenes as pyscenes
 from pyscenes.base_scene import BaseScene
 
 

@@ -1,4 +1,4 @@
-import pyscenes
+import pyscenes.pyscenes as pyscenes
 from pyscenes.base_scene import BaseScene
 
 # Game constants should be defined in class with scenes
