@@ -2,7 +2,7 @@
 
 ![GitHub](https://img.shields.io/github/license/treygilliland/PyScenes)
 ![Travis (.org)](https://img.shields.io/travis/treygilliland/pyscenes)
-[![Documentation Status](https://readthedocs.org/projects/pyscenes/badge/?version=latest)](https://pyscenes.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/pyscenes/badge/?version=latest)](https://pyscenes.readthedocs.io/?badge=latest)
 ![Lines of code](https://img.shields.io/tokei/lines/github/treygilliland/pyscenes)
 ![Codecov](https://img.shields.io/codecov/c/gh/treygilliland/pyscenes?color=pink)
 
@@ -28,7 +28,7 @@ and run any of the self-contained examples there. More coming soon!
 
 ## Documentation
 
-Documentation is hosted through ReadTheDocs [here](https://pyscenes.readthedocs.io/en/latest/).
+Documentation is hosted through ReadTheDocs [here](https://pyscenes.readthedocs.io/).
 
 Created using Sphinx.
 
