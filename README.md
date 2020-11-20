@@ -19,8 +19,12 @@ The PyScenes package contains two key components:
 
 To make a game with pyscenes, create a copy of the game_template.py file and start creating your scenes there!
 
-To see an example of using PyScenes, navigate to the examples directory
+To see an example of using PyScenes, navigate to the pyscenes/examples directory
 and run any of the self-contained examples there. More coming soon!
+
+An example implementation of the BaseScene class:
+
+![Example](https://github.com/treygilliland/PyScenes/blob/master/pyscenes/examples/assets/example_scene.png)
 
 ## Installation
 
