@@ -99,19 +99,27 @@ class BaseScene(ABC):
         self.switch_scene(None)
 
 
-# example implementation of the base scene
-# class TitleScene(BaseScene):
-#     def setup(self):
-#         print("setup")
+#example implementation of the BaseScene provided by PyScenes.
+class ExampleScene(BaseScene):
+    def setup(self):
+        # when scene initializes, setup your sprites and data here!
+        pass
 
-#     def process_input(self, events, pressed_keys):
-#         print("process")
+    def process_input(self, events, pressed_keys):
+        # step 1/3 of the game loop:
+        # process user input events here!
+        pass
 
-#     def update(self):
-#         print("update")
+    def update(self):
+        # step 2/3 of the game loop:
+        # update the data model and sprites here!
+        pass
 
-#     def render(self, screen):
-#         print("render")
+    def render(self, screen):
+        # step 3/3 of the game loop:
+        # render your changes to the screen here!
+        pass
 
-#     def cleanup(self):
-#         print("cleanup")
+    def cleanup(self):
+        # when scene concludes, clean up unused data and sprites here!
+        pass
