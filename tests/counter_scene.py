@@ -1,5 +1,5 @@
 # Self-contained test scene ensuring Game.run_game() works properly
-from pyscenes.base_scene import BaseScene
+from pyscenes import BaseScene
 
 
 class CounterScene(BaseScene):
@@ -9,14 +9,13 @@ class CounterScene(BaseScene):
     """
 
     def __init__(self, game, test_duration):
-        self.game = game
         self.test_duration = test_duration * game.fps
         self.setup_count = 0
         self.process_input_count = 0
         self.update_count = 0
         self.render_count = 0
         self.cleanup_count = 0
-        super().__init__()
+        super().__init__(game)
 
     def setup(self):
         self.setup_count += 1

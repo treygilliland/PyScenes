@@ -18,6 +18,7 @@ class Mixer:
     """
     Mixer controls the sounds of games.
     """
+
     def __init__(self):
         self.paused = False
         self.initialize()
@@ -72,6 +73,8 @@ class Display:
 # should be self contained, no need to access anything anything in here
 # inputs are only processed for quit events here
 #   all other input processing should be done through the scene itself
+
+
 class Game:
     def __init__(self, width, height, fps):
         self.fps = fps
@@ -84,7 +87,7 @@ class Game:
         pygame.init()
 
     # "main" method for running game, controlling system level
-    def run_game(self, starting_scene):
+    def run(self, starting_scene):
         self.current_scene = starting_scene
         self.current_scene.setup()
 
@@ -228,13 +231,16 @@ class Background:
     def scroll(self, x, y):
         self.stagePosX -= x
         self.stagePosY -= y
-        col = (self.stagePosX % (self.tileWidth * len(self.tiles[0]))) // self.tileWidth
+        col = (self.stagePosX %
+               (self.tileWidth * len(self.tiles[0]))) // self.tileWidth
         xOff = 0 - self.stagePosX % self.tileWidth
-        row = (self.stagePosY % (self.tileHeight * len(self.tiles))) // self.tileHeight
+        row = (self.stagePosY %
+               (self.tileHeight * len(self.tiles))) // self.tileHeight
         yOff = 0 - self.stagePosY % self.tileHeight
 
         col2 = (
-            (self.stagePosX + self.tileWidth) % (self.tileWidth * len(self.tiles[0]))
+            (self.stagePosX + self.tileWidth) % (self.tileWidth *
+                                                 len(self.tiles[0]))
         ) // self.tileWidth
         row2 = (
             (self.stagePosY + self.tileHeight) % (self.tileHeight * len(self.tiles))
@@ -243,7 +249,8 @@ class Background:
         screen.blit(self.tiles[row][col2], [xOff + self.tileWidth, yOff])
         screen.blit(self.tiles[row2][col], [xOff, yOff + self.tileHeight])
         screen.blit(
-            self.tiles[row2][col2], [xOff + self.tileWidth, yOff + self.tileHeight]
+            self.tiles[row2][col2], [
+                xOff + self.tileWidth, yOff + self.tileHeight]
         )
 
         self.surface = self.screen.copy()

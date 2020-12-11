@@ -1,6 +1,7 @@
-import pyscenes.pyscenes as pyscenes
+from pyscenes import pyscenes
+from pyscenes import Game
 from pyscenes.examples.title_screen import TitleScene
-from counter_scene import CounterScene
+from tests.counter_scene import CounterScene
 import os
 import pytest
 import time
@@ -16,7 +17,7 @@ FPS = 30
 
 @pytest.fixture
 def game_instance():
-    instance = pyscenes.Game(SCREEN_WIDTH, SCREEN_HEIGHT, FPS)
+    instance = Game(SCREEN_WIDTH, SCREEN_HEIGHT, FPS)
     return instance
 
 
@@ -63,7 +64,7 @@ def test_title_scene(game_instance):
     """
     wd = os.getcwd()
     os.chdir("pyscenes/examples/")
-    game_instance.run_game(TitleScene(game_instance, True))
+    game_instance.run(TitleScene(game_instance, True))
     os.chdir(wd)
 
 
@@ -71,4 +72,4 @@ def test_counter_scene(game_instance):
     """
     See CounterScene above.
     """
-    game_instance.run_game(CounterScene(game_instance, 2))
+    game_instance.run(CounterScene(game_instance, 2))
