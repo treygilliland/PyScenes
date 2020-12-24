@@ -1,5 +1,5 @@
 [run]
-omit = pyscenes/future_features.py, pyscenes/main.py
+omit = pyscenes/future_features.py, pyscenes/main.py, pyscenes/examples/scene_switcher.py
 
 [report]
 exclude_lines =
